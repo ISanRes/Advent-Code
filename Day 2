@@ -1,0 +1,12 @@
+text = open('input2.txt')
+
+valid = 0
+for line in text:
+    list = line.rsplit(' ')
+    numb1 = int(list[0].rsplit('-')[0])
+    numb2 = int(list[0].rsplit('-')[1])
+    letter = list[1].rsplit(':')[0]
+    if list[2][numb1-1] == letter and list[2][numb2-1] != letter or list[2][numb1-1] != letter and list[2][numb2-1] == letter:
+        valid = valid + 1
+
+print(valid)
